@@ -99,11 +99,19 @@ def enemyInRange(player, enemy):
     else:
         return True
 """
-def enemyInRange(player, enemy, attack.lower()):
+def enemyInRange(player, enemy, attack):
+    attackList = [
+        "Melee",
+        "Range"
+    ]
+    if attack.capitalize() not in attackList:
+        raise ValueError(f'Error: Unknown Attack Type.\n\tTry {", ".join(attackList)}.')
+        return
+    attack = attack.lower()
     if attack == "melee":
         maxDistance = 1
     elif attack == "range":
-        maxDistance = 5
+        maxDistance = 5 "Melee" or "Range".')
     dx = abs(player["x"] - enemy["x"])
     dy = abs(player["y"] - enemy["y"])
     distance = sum(dx, dy)
