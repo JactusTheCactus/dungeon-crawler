@@ -1,0 +1,158 @@
+{
+    "Abilities": {
+        "Regenerate": {
+            "Description": "Regenerate Health Over Time",
+            "Element": "Water",
+            "Upgrade": [
+                "+HP%"
+            ],
+            "Type": "Passive",
+            "Trigger": [
+                "HP < 100%"
+            ]
+        },
+        "Vampirism": {
+            "Description": "Heal For A Percentage Of The Damage You Deal (Not Including <i>Damage-Over-Time</i>)",
+            "Element": "Water",
+            "Upgrade": [
+                "+HP%"
+            ],
+            "Type": "Passive",
+            "Trigger": [
+                "Deal Damage"
+            ]
+        },
+        "Adrenaline": {
+            "Description": "Deal More Damage Relative To Kill Combo",
+            "Element": "Fire",
+            "Upgrade": [
+                "+AT%"
+            ],
+            "Type": "Passive",
+            "Trigger": [
+                "Combo > 1x"
+            ]
+        },
+        "Second Chance": {
+            "Description": "Revive at 50%HP After Death, Instead Of Ending The Run.",
+            "Element": "Air",
+            "Upgrade": [
+                "+Revivals"
+            ],
+            "Type": "Limited Use",
+            "Trigger": [
+                "Player Death"
+            ]
+        },
+        "Last Stand": {
+            "Description": "Deal Heavy Damage To Enemies For A Period After Reaching 0%HP. This Delays The End Of The Run Until The Effect Ends. Only Triggers When There Are No <i>Second Chance</i>s Left.",
+            "Element": "Fire",
+            "Upgrade": [
+                "+AT%"
+            ],
+            "Type": "Single Use",
+            "Trigger": [
+                "HP < 0%","<i>Second Chances</i> = 0"
+            ]
+        },
+        "Berserker Rage": {
+            "Description": "Deal More Damage When At Low HP",
+            "Element": "Fire",
+            "Upgrade": [
+                "+AT"
+            ],
+            "Type": "Unlimited Use",
+            "Trigger": [
+                "HP < 10%"
+            ]
+        },
+        "Charm": {
+            "Description": "Extra Discount On Gear At Merchant",
+            "Element": "Air",
+            "Upgrade": [
+                "+Discount%"
+            ],
+            "Type": "Passive",
+            "Trigger": [
+                "Interact With Merchant"
+            ]
+        },
+        "Rip & Tear": {
+            "Description": "Deal Damage Over Time After The First Hit",
+            "Element": "Fire",
+            "Upgrade": [
+                "+AT%"
+            ],
+            "Type": "Unlimited Use",
+            "Trigger": [
+                "First Attack"
+            ]
+        },
+        "Greed": {
+            "Description": "Earn More Gold From Kills + Chests",
+            "Element": "Earth",
+            "Upgrade": [
+                "+$%"
+            ],
+            "Type": "Passive",
+            "Trigger": [
+                "Kill Enemy",
+                "Loot Chest"
+            ]
+        },
+        "Reaper": {
+            "Description": "Earn More Souls From Runs",
+            "Element": "Air",
+            "Upgrade": [
+                "+Soul%"
+            ],
+            "Type": "Passive",
+            "Trigger": [
+                "End of Run"
+            ]
+        },
+        "Shield Wall": {
+            "Description": "Become Invulnerable For A Short Period",
+            "Element": "Earth",
+            "Upgrade": [
+                "+Time",
+                "-Combo"
+            ],
+            "Type": "Unlimited Use",
+            "Trigger": [
+                [
+                    "High Combo",
+                    "HP < 10%"
+                ]
+            ]
+        },
+        "Runecrafter": {
+            "Description": "Increase Gear Stats",
+            "Element": "Earth",
+            "Upgrade": [
+                "+GearAT%",
+                "+GearDF%",
+                "+GearAC%",
+                "+GearAG%"
+            ],
+            "Type": "Passive",
+            "Trigger": [
+                "Constant"
+            ]
+        },
+        "Elemental Affinity": {
+            "Description": "Increase A Specific Element's Power",
+            "Element": null,
+            "Upgrade": [
+                "<span id=\"Earth\">+Earth%</span>",
+                "<span id=\"Fire\">+Fire%</span>",
+                "<span id=\"Water\">+Water%</span>",
+                "<span id=\"Air\">+Air%</span>"
+            ],
+            "Type": "Passive",
+            "Trigger": [
+                "Constant"
+            ]
+        }
+    }
+}
