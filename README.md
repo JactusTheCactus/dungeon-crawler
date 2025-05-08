@@ -95,4 +95,7 @@ def enemyInRange(player, enemy):
         return False
     else:
         return True
+def enemyInRange(player, enemy, max_distance=1):
+    distance = abs(player["x"] - enemy["x"]) + abs(player["y"] - enemy["y"])
+    return distance <= max_distance
 ```
