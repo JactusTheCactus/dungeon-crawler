@@ -105,7 +105,7 @@ def enemyInRange(player, enemy, attack):
         "Range"
     ]
     if attack.capitalize() not in attackList:
-        raise ValueError(f'Error: Unknown Attack Type.\n\tTry {", ".join(attackList)}.')
+        raise ValueError(f'Error: Unknown Attack Type.\n\tTry {" or ".join([", ".join(attackList[:-2]), attackList[-1]])}.')
         return
     attack = attack.lower()
     if attack == "melee":
