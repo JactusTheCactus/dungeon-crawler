@@ -53,16 +53,28 @@ Functions:
 ```py
 import colorsys
 def getHSV(earth, fire, water, air):
-    earth["score"] = 125 * earthLevel
-    fire["score"] = 360 * fireLevel
-    water["score"] = 250 * waterLevel
-    air["score"] = 50 * airLevel
+    earth["score"] = 125 * earth["lvl"]
+    fire["score"] = 360 * fire["lvl"]
+    water["score"] = 250 * water["lvl"]
+    air["score"] = 50 * air["lvl"]
 
-    score = earth["score"] + fire["score"] + water["score"] + air["score"]
+    scoreList = [
+        earth["score"],
+        fire["score"],
+        water["score"],
+        air["score"]
+    ]
+    score = sum(scoreList)
 
-    level = earth["lvl"] + fire["lvl"] + water["lvl"] + air["lvl"]
+    lvlList = [
+        earth["lvl"],
+        fire["lvl"],
+        water["lvl"],
+        air["lvl"]
+    ]
+    lvl = sum(lvlList)
 
-    hue = score / level
+    hue = score / lvl
 
     return colorsys.hsv_to_rgb(hue, 1, 1)
 ```
