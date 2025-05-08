@@ -51,8 +51,8 @@ Functions:
 
 - "Elemental Affinity" Colour:
 ```py
-import colorsys
 def getHSV(earth, fire, water, air):
+    import colorsys
     earth["score"] = 125 * earth["lvl"]
     fire["score"] = 360 * fire["lvl"]
     water["score"] = 250 * water["lvl"]
