@@ -100,20 +100,21 @@ def enemyInRange(player, enemy):
         return True
 """
 def enemyInRange(player, enemy, attack):
-    attackList = [
-        "Melee",
-        "Range"
-    ]
-    if attack.capitalize() not in attackList:
-        raise ValueError(f'Error: Unknown Attack Type.\n\tTry {" or ".join([", ".join(attackList[:-2]), attackList[-1]])}.')
-        return
-    attack = attack.lower()
-    if attack == "melee":
-        maxDistance = 1
-    elif attack == "range":
-        maxDistance = 5
+    attackTypes = {
+        "Melee": 1,
+        "Range": 5
+    }
+    attack = attack.capitalize()
+    if attack not in attackTypes:
+        keys = list(attackTypes.keys())
+        if len(keys) > 1:
+            suggestions = ", ".join(keys[:-1]) + f", or {keys[-1]}"
+        else:
+            suggestions = keys[0]
+        raise ValueError(f"Error: Unknown Attack Type.\n\tTry {suggestions}.")
+    maxDistance = attackTypes[attack]
     dx = abs(player["x"] - enemy["x"])
     dy = abs(player["y"] - enemy["y"])
-    distance = sum([dx, dy])
+    distance = dx + dy
     return distance <= maxDistance
 ```
