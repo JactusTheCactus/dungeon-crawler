@@ -91,8 +91,8 @@ def enemyInRange(player, enemy):
     range = 1
     x = giveOrTake(enemy["x"], player["x"], range)
     y = giveOrTake(enemy["y"], player["y"], range)
-    if True is in [x, y]:
-        return True
-    else:
+    if False is in [x, y]:
         return False
+    else:
+        return True
 ```
