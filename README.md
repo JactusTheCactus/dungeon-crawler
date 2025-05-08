@@ -52,13 +52,18 @@ Functions:
 - "Elemental Affinity" Colour:
 ```py
 import colorsys
-earthScore = 125 * earthLevel
-fireScore = 360 * fireLevel
-waterScore = 250 * waterLevel
-airScore = 50 * airLevel
-totalScore = earthScore + fireScore + waterScore + airScore
-levelCount = earthLevel + fireLevel + waterLevel + airLevel
+def getHSV(earth, fire, water, air):
+    earth["score"] = 125 * earthLevel
+    fire["score"] = 360 * fireLevel
+    water["score"] = 250 * waterLevel
+    air["score"] = 50 * airLevel
 
-colour = colorsys.hsv_to_rgb(hue, 1, 1)
+    score = earth["score"] + fire["score"] + water["score"] + air["score"]
+
+    level = earth["lvl"] + fire["lvl"] + water["lvl"] + air["lvl"]
+
+    hue = score / level
+
+    return colorsys.hsv_to_rgb(hue, 1, 1)
 ```
 - 
