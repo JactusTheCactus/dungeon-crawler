@@ -99,9 +99,13 @@ def enemyInRange(player, enemy):
     else:
         return True
 """
-def enemyInRange(player, enemy, max_distance=1):
+def enemyInRange(player, enemy, attack.lower()):
+    if attack == "melee":
+        maxDistance = 1
+    elif attack == "range":
+        maxDistance = 5
     dx = abs(player["x"] - enemy["x"])
     dy = abs(player["y"] - enemy["y"])
     distance = sum(dx, dy)
-    return distance <= max_distance
+    return distance <= maxDistance
 ```
