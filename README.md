@@ -1,4 +1,6 @@
-Dungeon Crawler + Roguelite
+<!--
+# Dungeon Crawler + Roguelite
+## Features
 - After Death
     - Keep Abilities, Souls
     - Lose Gold, Gear, XP
@@ -46,9 +48,8 @@ Dungeon Crawler + Roguelite
     - Colour
         - Bosses
         - Status Effects
-
-Functions:
-
+-->
+## Functions:
 - "Elemental Affinity" Colour:
 ```py
 def getHSV(earth, fire, water, air):
