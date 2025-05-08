@@ -46,14 +46,19 @@ Dungeon Crawler + Roguelite
     - Colour
         - Bosses
         - Status Effects
-        - "Elemental Affinity" Colour Formula:
-```pl
-use Convert::Color::HSV;
-my $earthScore = 125 * $earthLevel;
-my $fireScore = 360 * $fireLevel;
-my $waterScore = 250 * $waterLevel;
-my $airScore = 50 * $airLevel;
-my $totalScore = $earthScore + $fireScore + $waterScore + $airScore;
-my $levelCount = $earthLevel + $fireLevel + $waterLevel + $airLevel;
-my $colour = Convert::Color::HSV->new( $hue, 1, 1 );
+
+Functions:
+
+- "Elemental Affinity" Colour:
+```py
+import colorsys
+earthScore = 125 * earthLevel
+fireScore = 360 * fireLevel
+waterScore = 250 * waterLevel
+airScore = 50 * airLevel
+totalScore = earthScore + fireScore + waterScore + airScore
+levelCount = earthLevel + fireLevel + waterLevel + airLevel
+
+colour = colorsys.hsv_to_rgb(hue, 1, 1)
 ```
+- 
