@@ -88,9 +88,9 @@ def giveOrTake(num, target, range):
     else:
         return False
 def enemyInRange(player, enemy):
-    range = 1
-    x = giveOrTake(enemy["x"], player["x"], range)
-    y = giveOrTake(enemy["y"], player["y"], range)
+    distance = 1
+    x = giveOrTake(enemy["x"], player["x"], distance)
+    y = giveOrTake(enemy["y"], player["y"], distance)
     if False is in [x, y]:
         return False
     else:
