@@ -78,4 +78,21 @@ def getHSV(earth, fire, water, air):
 
     return colorsys.hsv_to_rgb(hue, 1, 1)
 ```
-- 
+- Enemy In-Range Detector:
+```py
+def giveOrTake(num, target, range):
+    over = target + range
+    under = target + range
+    if under <= num <= over:
+        return True
+    else:
+        return False
+def enemyInRange(player, enemy):
+    range = 1
+    x = giveOrTake(enemy["x"], player["x"])
+    y = giveOrTake(enemy["y"], player["y"])
+    if True is in [x, y]:
+        return True
+    else:
+        return False
+```
