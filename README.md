@@ -82,7 +82,7 @@ def getHSV(earth, fire, water, air):
 ```py
 def giveOrTake(num, target, range):
     over = target + range
-    under = target + range
+    under = target - range
     if under <= num <= over:
         return True
     else:
