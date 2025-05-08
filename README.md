@@ -88,7 +88,7 @@ def enemyInRange(player, enemy, attack):
     attack = attack.capitalize()
     if attack not in attackTypes:
         keys = list(attackTypes.keys())
-        for i in range(keys):
+        for i in range(len(keys)):
             keys[i] = f'"{keys[i]}"'
         if len(keys) > 1:
             suggestions = ", ".join(keys[:-1]) + f", or {keys[-1]}"
