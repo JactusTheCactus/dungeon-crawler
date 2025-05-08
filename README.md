@@ -80,25 +80,6 @@ def getHSV(earth, fire, water, air):
 ```
 - Enemy In-Range Detector:
 ```py
-"""
-def giveOrTake(num, target, range):
-    over = target + range
-    under = target - range
-    if under <= num <= over:
-        return True
-    else:
-        return False
-"""
-"""
-def enemyInRange(player, enemy):
-    distance = 1
-    x = giveOrTake(enemy["x"], player["x"], distance)
-    y = giveOrTake(enemy["y"], player["y"], distance)
-    if False is in [x, y]:
-        return False
-    else:
-        return True
-"""
 def enemyInRange(player, enemy, attack):
     attackTypes = {
         "Melee": 1,
@@ -107,8 +88,8 @@ def enemyInRange(player, enemy, attack):
     attack = attack.capitalize()
     if attack not in attackTypes:
         keys = list(attackTypes.keys())
-        for key in keys:
-            key = f'"{key}"'
+        for i in range(keys):
+            keys[i] = f'"{keys[i]}"'
         if len(keys) > 1:
             suggestions = ", ".join(keys[:-1]) + f", or {keys[-1]}"
         else:
