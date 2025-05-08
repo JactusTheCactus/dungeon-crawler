@@ -114,6 +114,6 @@ def enemyInRange(player, enemy, attack):
         maxDistance = 5
     dx = abs(player["x"] - enemy["x"])
     dy = abs(player["y"] - enemy["y"])
-    distance = sum(dx, dy)
+    distance = sum([dx, dy])
     return distance <= maxDistance
 ```
